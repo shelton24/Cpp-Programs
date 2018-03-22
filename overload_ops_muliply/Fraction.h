@@ -12,5 +12,7 @@ public:
   friend Fraction operator*(const Fraction &a, const Fraction &b);
   friend Fraction operator*(const Fraction &a, int val);
   friend Fraction operator*(int val, const Fraction &a);
+  friend std::ostream & operator<<(std::ostream &out,const Fraction &f);
+  friend std::istream & operator>>(std::istream &in,Fraction &f);
 };
 #endif

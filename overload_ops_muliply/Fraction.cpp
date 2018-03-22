@@ -1,5 +1,5 @@
-#include "Fraction.h"
 #include <iostream>
+#include "Fraction.h"
 
 void Fraction::print() const {
     std::cout << m_num << "/" << m_den << std::endl;
@@ -18,4 +18,17 @@ Fraction operator*(const Fraction &a, int val)
 Fraction operator*(int val, const Fraction &b)
 {
 	return b * val;
+}
+
+std::ostream & operator<<(std::ostream &out, const Fraction &f)
+{
+	out << f.m_num << "/" << f.m_den;
+	return out;
+}
+
+std::istream & operator>>(std::istream &in, Fraction &f)
+{
+	in >> f.m_num;
+	in >> f.m_den;
+	return in;
 }
